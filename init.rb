@@ -7,6 +7,6 @@ Redmine::Plugin.register :redmine_msg_preview do
   version '0.0.1'
 end
 
-class RedmineScreenshotPasteHook < Redmine::Hook::ViewListener
+class RedmineMSGPreviewHook < Redmine::Hook::ViewListener
   render_on :view_issues_show_description_bottom, :partial => 'msg_preview'
 end
