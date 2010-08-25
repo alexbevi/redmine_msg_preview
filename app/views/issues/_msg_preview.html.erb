@@ -1,1 +1,8 @@
-<p>HI</p>
+<% if @issue.attachments.length > 0 %>
+<hr />
+<p><strong>Attached Outlook Messages</strong></p>
+<% @issue.attachments.each do |att| %>
+	<% msg = Mapi::Msg.open att.diskfile %>
+	<%= msg.properties[0x0037] %>
+<% end %>
+<% end %>
