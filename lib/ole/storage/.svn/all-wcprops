@@ -1,0 +1,23 @@
+K 25
+svn:wc:ra_dav:version-url
+V 38
+/svn/!svn/ver/75/trunk/lib/ole/storage
+END
+meta_data.rb
+K 25
+svn:wc:ra_dav:version-url
+V 51
+/svn/!svn/ver/73/trunk/lib/ole/storage/meta_data.rb
+END
+file_system.rb
+K 25
+svn:wc:ra_dav:version-url
+V 53
+/svn/!svn/ver/75/trunk/lib/ole/storage/file_system.rb
+END
+base.rb
+K 25
+svn:wc:ra_dav:version-url
+V 46
+/svn/!svn/ver/73/trunk/lib/ole/storage/base.rb
+END

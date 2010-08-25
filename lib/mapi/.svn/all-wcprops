@@ -1,0 +1,41 @@
+K 25
+svn:wc:ra_dav:version-url
+V 32
+/svn/!svn/ver/125/trunk/lib/mapi
+END
+property_set.rb
+K 25
+svn:wc:ra_dav:version-url
+V 48
+/svn/!svn/ver/121/trunk/lib/mapi/property_set.rb
+END
+convert.rb
+K 25
+svn:wc:ra_dav:version-url
+V 43
+/svn/!svn/ver/124/trunk/lib/mapi/convert.rb
+END
+types.rb
+K 25
+svn:wc:ra_dav:version-url
+V 41
+/svn/!svn/ver/117/trunk/lib/mapi/types.rb
+END
+msg.rb
+K 25
+svn:wc:ra_dav:version-url
+V 39
+/svn/!svn/ver/125/trunk/lib/mapi/msg.rb
+END
+pst.rb
+K 25
+svn:wc:ra_dav:version-url
+V 39
+/svn/!svn/ver/125/trunk/lib/mapi/pst.rb
+END
+rtf.rb
+K 25
+svn:wc:ra_dav:version-url
+V 39
+/svn/!svn/ver/123/trunk/lib/mapi/rtf.rb
+END
