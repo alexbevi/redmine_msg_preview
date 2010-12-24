@@ -1,10 +1,12 @@
 require 'redmine'
 
 Redmine::Plugin.register :redmine_msg_preview do
-  name 'Outlook MSG Preview'
-  author 'Alex Bevilacqua'
+  name        'Outlook MSG Preview'
+  author      'Alex Bevilacqua'
+  url         'http://www.alexbevi.com/projects/redmine-msg-preview'
+  author_url  'http://blog.alexbevi.com'
   description 'Allow previewing of Microsoft Outlook .msg file attachments'
-  version '0.0.1'
+  version     '0.0.1'
 end
 
 class RedmineMSGPreviewHook < Redmine::Hook::ViewListener
