@@ -14,7 +14,7 @@
     <tr class="<%= cycle("odd", "even") %>">
     <td><%= sender_to_s(msg) %></td>
 	  <td><%= msg.properties[0x0037] %></td>
-	  <td><%= msg.properties[0x3007] %></td>
+	  <td><%= format_time(msg.properties[0x3007].to_s) %></td>
     </tr>
   <% end %>
     </tbody>
