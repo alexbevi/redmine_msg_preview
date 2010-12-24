@@ -1,3 +1,8 @@
+<% content_for :header_tags do %>
+  <%= javascript_include_tag 'facebox', :plugin => 'redmine_msg_preview' %>
+  <%= stylesheet_link_tag 'facebox', :plugin => 'redmine_msg_preview' %>
+<% end %>
+
 <% if @issue.attachments.length > 0 %>
 <hr />
 <p><strong>Attached Outlook Messages</strong></p>
@@ -17,7 +22,7 @@
 	  <td><%= msg.properties[0x0037] %></td>
 	  <td><%= format_time(msg.properties[0x3007].to_s) %></td>
 	  <td class="buttons">
-      <%= link_to("Open", "#", :class => 'icon icon-folder') %>
+      <%= link_to_remote("Open", :class => 'icon open icon-folder', :url => { :controller => "msg", :action => "show", :diskfile => att.diskfile }) %>
       <%= link_to(l(:button_delete), "#", :class => 'icon icon-del') %>
     </td>
     </tr>
