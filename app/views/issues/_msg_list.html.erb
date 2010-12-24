@@ -1,0 +1,24 @@
+<% if @issue.attachments.length > 0 %>
+<hr />
+<p><strong>Attached Outlook Messages</strong></p>
+	<div class="autoscroll">
+  <table class="list">
+    <thead><tr>
+	  <th>From</th>
+	  <th>Subject</th>
+	  <th>Received</th>
+    </tr></thead>
+    <tbody>
+  <% @issue.attachments.each do |att| %>
+	  <% msg = Mapi::Msg.open att.diskfile %>
+    <tr class="<%= cycle("odd", "even") %>">
+    <td><%= sender_to_s(msg) %></td>
+	  <td><%= msg.properties[0x0037] %></td>
+	  <td><%= msg.properties[0x3007] %></td>
+    </tr>
+  <% end %>
+    </tbody>
+  </table>
+  </div>
+<% end %>
+
