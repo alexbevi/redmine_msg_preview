@@ -1,0 +1,33 @@
+<% content_for :header_tags do %>
+  <%= javascript_include_tag 'facebox', :plugin => 'redmine_msg_preview' %>
+  <%= stylesheet_link_tag 'facebox', :plugin => 'redmine_msg_preview' %>
+<% end %>
+
+<% if @issue.attachments.length > 0 %>
+<hr />
+<p><strong>Attached Outlook Messages</strong></p>
+	<div class="autoscroll">
+  <table class="list">
+    <thead><tr>
+	  <th>From</th>
+	  <th>Subject</th>
+	  <th>Received</th>
+	  <th></th>
+    </tr></thead>
+    <tbody>
+  <% @issue.attachments.each do |att| %>
+	  <% msg = Mapi::Msg.open att.diskfile %>
+    <tr class="<%= cycle("odd", "even") %>">
+    <td><%= sender_to_s(msg) %></td>
+	  <td><%= msg.properties[0x0037] %></td>
+	  <td><%= format_time(msg.properties[0x3007].to_s) %></td>
+	  <td class="buttons">
+      <%= link_to_remote("Open", :class => 'icon open icon-folder', :url => { :controller => "msg", :action => "show", :file_id => att.id }) %>
+    </td>
+    </tr>
+  <% end %>
+    </tbody>
+  </table>
+  </div>
+<% end %>
+

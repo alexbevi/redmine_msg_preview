@@ -1,0 +1,25 @@
+<table border="1" width="600">
+	<tr>
+		<td colspan="2"><%= @msg.properties[0x0037] %></td>
+	</tr>
+	<tr>
+		<td>Sent</td>
+		<td><%= @msg.properties[0x3007] %></td>
+	</tr>
+	<tr>
+		<td width="50">From</td>
+		<td><%= @msg.properties[0x3FF8] + "[" + @msg.properties[0x0C1F] +"]" %></td>
+	</tr>
+	<tr>
+		<td width="50">To</td>
+		<td><%= @msg.properties[0x0E04] %></td>
+	</tr>
+	<tr>
+		<td colspan="2">
+			<div style="height: 500px; overflow: auto; padding: 8px;">
+				<%= @msg.props.body_html %>
+			</div>
+		</td>
+	</tr>
+</table>
+
