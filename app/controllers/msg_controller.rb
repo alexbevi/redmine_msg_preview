@@ -4,7 +4,8 @@ class MsgController < ApplicationController
   include FaceboxRender
 
   def show
-    @msg = Mapi::Msg.open params[:diskfile]
+    file = Attachment.find(params[:file_id])
+    @msg = Mapi::Msg.open(file.diskfile)
     render_to_facebox
   end
 

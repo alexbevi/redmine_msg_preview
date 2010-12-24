@@ -22,7 +22,7 @@
 	  <td><%= msg.properties[0x0037] %></td>
 	  <td><%= format_time(msg.properties[0x3007].to_s) %></td>
 	  <td class="buttons">
-      <%= link_to_remote("Open", :class => 'icon open icon-folder', :url => { :controller => "msg", :action => "show", :diskfile => att.diskfile }) %>
+      <%= link_to_remote("Open", :class => 'icon open icon-folder', :url => { :controller => "msg", :action => "show", :file_id => att.id }) %>
     </td>
     </tr>
   <% end %>
