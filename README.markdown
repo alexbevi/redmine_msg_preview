@@ -14,6 +14,11 @@ This plugin wouldn't be possible without
 
 ## Version History
 
+0.0.2 - 2011-JAN-19
+
+- Fixed properties not being parsed consistently for certain attachments
+- Preview now opens the message body in an iframe to prevent style overwrites
+
 0.0.1 - 2010-DEC-24
 
 Initial release
