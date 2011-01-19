@@ -1,14 +1,14 @@
 <table border="1" width="600">
 	<tr>
-		<td colspan="2"><%= @msg.properties[0x0037] %></td>
+		<td colspan="2"><%= lookup_property(@msg, "SUBJECT") %></td>
 	</tr>
 	<tr>
 		<td>Sent</td>
-		<td><%= @msg.properties[0x3007] %></td>
+		<td><%= lookup_property(@msg, "CREATION_TIME") %></td>
 	</tr>
 	<tr>
 		<td width="50">From</td>
-		<td><%= @msg.properties[0x3FF8] + "[" + @msg.properties[0x0C1F] +"]" %></td>
+		<td><%=lookup_property(@msg, "SENDER") %></td>
 	</tr>
 	<tr>
 		<td width="50">To</td>

@@ -6,7 +6,7 @@ Redmine::Plugin.register :redmine_msg_preview do
   url         'http://www.alexbevi.com/projects/redmine-msg-preview'
   author_url  'http://blog.alexbevi.com'
   description 'Allow previewing of Microsoft Outlook .msg file attachments'
-  version     '0.0.1'
+  version     '0.0.2'
 end
 
 class RedmineMSGPreviewHook < Redmine::Hook::ViewListener
@@ -15,12 +15,18 @@ end
 
 module MsgHelper
   module PublicMethods
-    def sender_to_s(msg)
-      sender_name =  msg.properties[0x3FF8]
-      sender_email = msg.properties[0x0C1F]
-
-      "#{sender_name.titlecase} [#{sender_email.downcase}]"
+    
+    def lookup_property(msg, prop)
+      case prop.upcase
+        when "SENDER":
+          return msg.properties.sent_representing_name
+        when "SUBJECT"
+          return msg.properties.subject
+        when "CREATION_TIME"
+          return msg.properties.creation_time.to_s
+      end
     end
+    
   end
 end
 
